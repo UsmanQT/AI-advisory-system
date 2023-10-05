@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ask a Question</title>
+</head>
+<body>
+    <h1>Ask a Question</h1>
+
+    <form action="/submit_question" method="post">
+        <label for="question">Enter your question:</label>
+        <input type="text" id="question" name="question" required>
+        <input type="submit" value="Send">
+    </form>
+
+    <!-- Add a section for displaying the response -->
+    <div id="response">
+        {% if response %}
+            <p>{{ response }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
