@@ -1,3 +1,10 @@
+# This file uses alpaca large language model using langchain framework.
+# URLS are loaded using langchain url loader package
+# Python flask server is setup so it can listen on a specific port
+# User is served with a template where he can ask a question
+# The server responds with an answer to the question using the alpaca language model
+# This code feature basically will be used in the future to serve as the backend of the system
+
 
 from flask import Flask, render_template, request
 import asyncio
@@ -15,13 +22,9 @@ from langchain.chains import RetrievalQA
 from langchain.document_loaders import UnstructuredURLLoader  #load urls into docoument-loader
 from langchain.chains import RetrievalQA
 
-
-
 import requests
 
 llm2=HuggingFaceHub(repo_id="declare-lab/flan-alpaca-large", model_kwargs={"temperature":0, "max_length":512})
-
-
 
 app = Flask(__name__)
 
